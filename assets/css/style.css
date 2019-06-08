@@ -2265,7 +2265,7 @@ label {
 .alert-warning{
     font-size: 16px;
     color: #fff;
-background-color: #ffd777;
+    background-color: #ffd777;
 }
 .wrapper>.mt{
     padding-left: 5%;
@@ -2316,8 +2316,19 @@ background-color: #ffd777;
     width: 40%;
     height: 25%;
 }
-
+#ContentAsignarCredito{
+    width: 40%;
+    height: 50%;
+}
+#ContentVenderCliente{
+    width: 76%;
+    height: 98%;
+}
 /***********  PRODUCTOS ***************/
+#modalProducto{
+    width: 50%;
+    height: 74%; 
+}
 #ContentEditarProducto{
     width: 40%;
     height: 96%;
@@ -2344,7 +2355,18 @@ background-color: #ffd777;
     width: 40%;
     height: 26%;
 }
-
+#ContentSelectProveedor{
+    width: 60%;
+    height: 74%;
+}
+#ContentVerProductosProveedor{
+    width: 60%;
+    height: 94%;
+}
+#ContentConfirmarProduct{
+    width: 35%;
+    height: 24%;
+}
 /************* Bancolombia *************/
 #ContentSolicitarBancolombia{
     width: 40%;
@@ -2365,6 +2387,4 @@ background-color: #ffd777;
     width: 35%;
     height: 60%;
 }
-
-
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -13,139 +14,387 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
+
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
 
-  <section id="container" >
-      <!-- **********************************************************************************************************************************************************
+    <section id="container">
+        <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
-      <!--header start-->
-      <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
+        <!--header start-->
+        <header class="header black-bg">
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            </div>
             <!--logo start-->
             <a href="index.html" class="logo"><b>TU TIENDA WEB</b></a>
             <!--logo end-->
 
             <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
+                <ul class="nav pull-right top-menu">
                     <li><a class="logout" href="login.html">Logout</a></li>
-            	</ul>
+                </ul>
             </div>
         </header>
-      <!--header end-->
-      
-      <!-- **********************************************************************************************************************************************************
+        <!--header end-->
+
+        <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-      <aside>
-        <div id="sidebar"  class="nav-collapse ">
-            <!-- sidebar menu start-->
-            <ul class="sidebar-menu" id="nav-accordion">
-            
-                  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sherman.jpg" class="img-circle" width="60"></a></p>
-                  <h5 class="centered">Tendero</h5>
-                      
-                <li class="mt">
-                    <a  href="index.html">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Ofertas</span>
-                    </a>
-                </li>
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
 
-                <li class="sub-menu">
-                    <a href="clientes.html" >
-                        <i class="fa fa-desktop"></i>
-                        <span>Clientes</span>
-                    </a>
-                </li>
+                    <p class="centered"><a href="profile.html"><img src="assets/img/ui-sherman.jpg" class="img-circle"
+                                width="60"></a></p>
+                    <h5 class="centered">Tendero</h5>
 
-                <li class="sub-menu">
-                    <a href="productos.html" >
-                        <i class="fa fa-cogs"></i>
-                        <span>Productos</span>
-                    </a>
-                </li>
-                <li  class="sub-menu">
-                    <a class="active" href="proveedores.html" >
-                        <i class="fa fa-book"></i>
-                        <span>Proveedores</span>
-                    </a>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;" >
-                        <i class="fa fa-tasks"></i>
-                        <span>Informes</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a  href="form_component.html">Form Components</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="campanas.html" >
-                        <i class="fa fa-th"></i>
-                        <span>Campañas</span>
-                    </a>
-                </li>
-                <li class="sub-menu">
-                    <a href="estadisticas.html" >
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Estadisticas</span>
-                    </a>
-                </li>
+                    <li class="mt">
+                        <a href="index.html">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Ofertas</span>
+                        </a>
+                    </li>
 
-            </ul>
-            <!-- sidebar menu end-->
-        </div>
-      </aside>
-      <!--sidebar end-->
-      
-      <!-- **********************************************************************************************************************************************************
+                    <li class="sub-menu">
+                        <a href="clientes.html">
+                            <i class="fa fa-tasks"></i>
+                            <span>Clientes</span>
+                        </a>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="productos.html">
+                            <i class="fa fa-cogs"></i>
+                            <span>Productos</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a class="active" href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <span>Proveedores</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="proveedores.html"><i class="fa fa-tasks"></i> Ver Proveedores</a></li>
+                        </ul>
+                        <ul class="sub">
+                            <li><a href="pedidosProveedor.html"><i class="fa fa-pencil-square"></i> Realizar Pedidos</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-tasks"></i>
+                            <span>Informes</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="form_component.html">Form Components</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="campanas.html">
+                            <i class="fa fa-th"></i>
+                            <span>Campañas</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="estadisticas.html">
+                            <i class=" fa fa-bar-chart-o"></i>
+                            <span>Estadisticas</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+
+        <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
-      <!--main content start-->
-      <section id="main-content">
-          <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          		<p>Place your content here.</p>
-          		</div>
-          	</div>
-			
-		</section><! --/wrapper -->
-      </section><!-- /MAIN CONTENT -->
+        <section id="main-content">
+            <section class="wrapper site-min-height">
+                <h3><i class="fa fa-angle-right"></i> Realizar Pedidos</h3>
+                <div class="row mt">
+                    <button class="btn btn-primary" onclick="showModalSelectProveedor()"><i
+                            class="fa fa-credit-card"></i> Seleccionar
+                        Proveedor</button>
+                    <br><br>
+                    <div class="col-md-11">
+                        <div class="row" style="text-align: center">
 
-      <!--main content end-->
-      <!--footer start-->
-      <footer class="site-footer">
-        <div class="text-center">
-            2019 - Analisis y Diseño de Sistemas
-            <a href="index.html#" class="go-top">
-                <i class="fa fa-angle-up"></i>
-            </a>
+                            <br>
+                            <table id="example" class="display" style="width:100%; font-size: 14px; text-align: center">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Precio Compra</th>
+                                        <th>Precio Venta</th>
+                                        <th>Cantidad</th>
+                                        <th>SubTotal</th>
+                                        <th>Proveedor</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Arroz</td>
+                                        <td>2000</td>
+                                        <td>2400</td>
+                                        <td><input type="number" class="form-control"></td>
+                                        <td><input type="number" class="form-control" readonly></td>
+                                        <td>Arroz Gelvez</td>
+                                        <td>
+                                            <button class="btn btn-danger btn-xl" onclick="showModalEliminar()"><i
+                                                    class="fa fa-trash-o "></i></button></td>
+                                    </tr>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Precio Compra</th>
+                                        <th>Precio Venta</th>
+                                        <th>Cantidad</th>
+                                        <th>SubTotal</th>
+                                        <th>Proveedor</th>
+                                        <th>Operaciones</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div><!-- row -->
+                    </div>
+                </div>
+
+            </section>
+            <! --/wrapper -->
+        </section><!-- /MAIN CONTENT -->
+
+        <!-- MODAL CONFIRMAR PRODUCTO-->
+        <div id="ModalConfirmarProductos" style="display: none; z-index: 2000;" class="modal">
+
+            <div id="ContentConfirmarProduct" class="contenido-modal">
+                <button type="button" class="close" onclick="CloseModalSelectProveedor()" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div style="text-align: center">
+                    <h3>Se ha Agregado El Producto !!</h3>
+                    <br>
+                </div>
+                <fieldset style="padding: 5px">
+                    <form>
+                        <div class="row">
+                            <div class="col-xs-5 col-md-6" style="margin-left: 75%;">
+                                <button type="button" class="btn btn-warning" onclick="CloseModalConfirmarProducto()">
+                                    <i class="fa fa-adn"></i> Aceptar </button>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
         </div>
-    </footer>
-    <!--footer end-->
-  </section>
+        <!-- /MODAL CONFIRMAR PRODUCTO-->
+
+        <!-- MODAL SELECCIONAR PROVEEDOR-->
+        <div id="ModalSelectProveedor" style="display: none" class="modal">
+
+            <div id="ContentSelectProveedor" class="contenido-modal">
+                <button type="button" class="close" onclick="CloseModalSelectProveedor()" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div style="text-align: center">
+                    <h3>Elige un Proveedor</h3><small>Selecciona los productos que desees comprar</small>
+                    <br><br>
+                </div>
+                <fieldset style="padding: 5px">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 mb">
+                                <div class="darkblue-panel pn" style="padding-bottom:16px">
+                                    <div class="darkblue-header">
+                                        <h5>Alkosto</h5>
+                                    </div>
+                                    <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
+                                    <p>+ 1,789 PRODUCTOS</p>
+                                    <footer>
+                                        <div class="centered">
+                                            <button class="btn btn-default" onclick="showModalVerProductos()"><i
+                                                    class="fa fa-trophy"></i> Ver
+                                                Productos</button>
+                                        </div>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 mb">
+                                <div class="darkblue-panel pn">
+                                    <div class="darkblue-header">
+                                        <h5>Metro</h5>
+                                    </div>
+                                    <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
+                                    <p>99 PRODUCTOS</p>
+                                    <footer>
+                                        <div class="centered">
+                                            <button class="btn btn-default" onclick="showModalVerProductos()"><i
+                                                    class="fa fa-trophy"></i> Ver
+                                                Productos</button>
+                                        </div>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 mb">
+                                <div class="darkblue-panel pn" style="padding-bottom:16px">
+                                    <div class="darkblue-header">
+                                        <h5>Cenabastos</h5>
+                                    </div>
+                                    <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
+                                    <p>+ 1,789 PRODUCTOS</p>
+                                    <footer>
+                                        <div class="centered">
+                                            <button class="btn btn-default" onclick="showModalVerProductos()"><i
+                                                    class="fa fa-trophy"></i> Ver
+                                                Productos</button>
+                                        </div>
+                                    </footer>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-5 col-md-6" style="margin-left: 83%;">
+                                <button type="button" class="btn btn-danger" onclick="CloseModalSelectProveedor()">
+                                    <i class="glyphicon glyphicon-ban-circle"></i> Cancelar </button>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+        <!-- /MODAL SELECCIONAR PROVEEDOR-->
+
+        <!-- MODAL ESCOGER PRODUCTOS DEL PROVEEDOR-->
+        <div id="ModalVerProductos" style="display: none" class="modal">
+
+            <div id="ContentVerProductosProveedor" class="contenido-modal">
+                <button type="button" class="close" onclick="CloseModalVerProductos()" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div style="text-align: center">
+                    <h3>SELECCIONA LOS PRODUCTOS A COMPRAR</h3><small>Selecciona los productos que desees
+                        comprar</small>
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="thumbnail">
+                                <div class="alert alert-warning" role="alert">Alkosto</div>
+                                <img src="https://geant.vteximg.com.br/arquivos/ids/194579-1000-1000/511251.jpg?v=636312980236300000"
+                                    alt="..." width="150px">
+                                <div class="caption">
+                                    <h3>Zucaritas</h3>
+                                    <h5><b>$ 80.000</b></h5>
+
+                                    <p><a href="#" class="btn btn-primary" onclick="showModalConfirmarProducto()"
+                                            role="button">Agregar Al Pedido</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="thumbnail">
+                                <div class="alert alert-warning" role="alert">Alkosto</div>
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/71D92fZtH6L._SL1500_.jpg"
+                                    alt="..." width="150px">
+                                <div class="caption">
+                                    <h3>RedBull</h3>
+                                    <h5><b>$ 80.000</b></h5>
+
+                                    <p><a href="#" class="btn btn-primary" onclick="showModalConfirmarProducto()"
+                                            role="button">Agregar Al Pedido</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <fieldset>
+                    <form>
+
+
+                        <div class="row">
+                            <div class="col-xs-5 col-md-6" style="margin-left: 83%;">
+                                <button type="button" class="btn btn-danger" onclick="CloseModalVerProductos()">
+                                    <i class="glyphicon glyphicon-ban-circle"></i> Cancelar </button>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+        <!-- /MODAL ESCOGER PRODUCTOS DEL PROVEEDOR -->
+
+        <!-- MODAL ELIMINAR PROVEEDOR-->
+        <div id="ModalEliminar" style="display: none" class="modal">
+
+                <div id="ContentEliminarProveedor" class="contenido-modal">
+                    <button type="button" class="close" onclick="CloseModalEliminar()" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3 style="text-align: center">¿Esta Seguro de Eliminar el Producto?</h3>
+                    <br>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-xs-5 col-md-6" style="margin-left: 28%;">
+                                <button type="button" class="btn btn-danger" onclick="CloseModalEliminar()">
+                                    <i class="glyphicon glyphicon-ban-circle"></i> Cancelar </button>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i>
+                                    Eliminar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <!-- /MODAL ELIMINAR PROVEEDOR-->
+
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                2019 - Analisis y Diseño de Sistemas
+                <a href="index.html#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
     <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
@@ -157,15 +406,55 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    
-  <script>
-      //custom select box
 
-      $(function(){
-          $('select.styled').customSelect();
-      });
+    <script>
+        //custom select box
+        function showModalSelectProveedor() {
+            document.getElementById('ModalSelectProveedor').style.display = 'block';
+        }
 
-  </script>
+        function CloseModalSelectProveedor() {
+            document.getElementById('ModalSelectProveedor').style.display = 'none';
+        }
 
-  </body>
+        function showModalVerProductos() {
+            event.preventDefault()
+            document.getElementById('ModalVerProductos').style.display = 'block';
+        }
+
+        function CloseModalVerProductos() {
+            document.getElementById('ModalVerProductos').style.display = 'none';
+        }
+
+        function showModalConfirmarProducto() {
+            // event.preventDefault()
+            document.getElementById('ModalConfirmarProductos').style.display = 'block';
+            // document.getElementById('ModalVerProductos').style.display = 'none';
+            // document.getElementById('ModalSelectProveedor').style.display = 'none';
+
+        }
+
+        function CloseModalConfirmarProducto() {
+            document.getElementById('ModalConfirmarProductos').style.display = 'none';
+        }
+
+        function showModalEliminar() {
+            document.getElementById('ModalEliminar').style.display = 'block';
+        }
+
+        function CloseModalEliminar() {
+            document.getElementById('ModalEliminar').style.display = 'none';
+        }
+
+        $(function () {
+            $('select.styled').customSelect();
+        });
+
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+
+</body>
+
 </html>

@@ -56,8 +56,8 @@
         <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
-        <!--sidebar start-->
-        <aside>
+       <!--sidebar start-->
+       <aside>
             <div id="sidebar" class="nav-collapse ">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
@@ -74,17 +74,11 @@
                     </li>
 
                     <li class="sub-menu">
-                            <a href="javascript:;">
-                                <i class="fa fa-desktop"></i>
-                                <span>Clientes</span>
-                            </a>
-                            <ul class="sub">
-                                    <li><a href="clientes.html"><i class="fa fa-pencil-square"></i> Ver Clientes</a></li>
-                            </ul>
-                            <ul class="sub">
-                                    <li><a href="pedidosProveedor.html"><i class="fa fa-tasks"></i> Asignar Crédito</a></li>
-                            </ul>
-                        </li>
+                        <a  href="clientes.html">
+                            <i class="fa fa-tasks"></i>
+                            <span>Clientes</span>
+                        </a>
+                    </li>
 
                     <li class="sub-menu">
                         <a href="productos.html">
@@ -347,9 +341,9 @@
         </section>
 
         <!-- MODAL PRODUCTOS-->
-        <div id="openModal" style="display: none">
+        <div id="openModal" style="display: none" class="modal" >
 
-            <div id="modalProducto">
+            <div id="modalProducto" class="contenido-modal">
                 <button type="button" class="close" onclick="CloseModal()" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -358,8 +352,8 @@
 
                     <div class="col-xs-12 col-sm-1"></div>
 
-                    <div class="col-xs-12 col-sm-5" style="margin-left:auto">
-                        <img style="vertical-align:middle; margin:auto;"
+                    <div class="col-xs-12 col-sm-5">
+                        <img
                             src="https://images-na.ssl-images-amazon.com/images/I/71D92fZtH6L._SL1500_.jpg"
                             class="img-responsive categorias-move" width="400px">
                         <div class="alert alert-warning" role="alert">Panamericana</div>
@@ -376,19 +370,20 @@
                         <h4>Descripción</h4>
                         <p>Bebida energizante de origen natural sabor a lima</p>
 
-                        <hr>
+                        <!-- <hr> -->
                         <div class="row">
                             <div class="col-xs-4 col-sm-4">
                                 <h4>Disponibles</h4><input type="text" class="form-control" value="3" readonly>
                             </div>
-                            <div class="col-xs-1 col-sm-1"></div>
-                            <div class="col-xs-4 col-sm-4">
+                            <div class="col-xs-1 col-sm-2"></div>
+                            <div class="col-xs-4 col-sm-6">
                                 <h4>Categoria</h4>
                                 <input type="text" class="form-control" name="" value="Bebidas" readonly>
                             </div>
                         </div>
 
-                        <hr><br>
+                        <!-- <hr> -->
+                        <br>
 
                         <div class="row">
                             <div class="col-xs-6 col-sm-6">
