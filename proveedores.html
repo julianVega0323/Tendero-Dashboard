@@ -40,12 +40,12 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>TU TIENDA WEB</b></a>
+            <a href="dashboard.html" class="logo"><b>TU TIENDA WEB</b></a>
             <!--logo end-->
 
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="index.html">Logout</a></li>
                 </ul>
             </div>
         </header>
@@ -65,14 +65,14 @@
                     <h5 class="centered">Tendero</h5>
 
                     <li class="mt">
-                        <a href="index.html">
+                        <a href="dashboard.html">
                             <i class="fa fa-dashboard"></i>
                             <span>Ofertas</span>
                         </a>
                     </li>
 
                     <li class="sub-menu">
-                        <a  href="clientes.html">
+                        <a href="clientes.html">
                             <i class="fa fa-tasks"></i>
                             <span>Clientes</span>
                         </a>
@@ -102,18 +102,15 @@
                             <i class="fa fa-tasks"></i>
                             <span>Informes</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="form_component.html">Form Components</a></li>
-                        </ul>
                     </li>
                     <li class="sub-menu">
-                        <a href="campanas.html">
+                        <a href="#">
                             <i class="fa fa-th"></i>
                             <span>Campañas</span>
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="estadisticas.html">
+                        <a href="#">
                             <i class=" fa fa-bar-chart-o"></i>
                             <span>Estadisticas</span>
                         </a>
@@ -144,30 +141,23 @@
                                         <th>Nombre</th>
                                         <th>Telefono</th>
                                         <th>Nombre de Empresa</th>
-                                        <th>Email</th>
+                                        <th style="width: 100px">Email</th>
                                         <th>Operaciones</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="Tbody">
                                     <tr>
-                                        <td>Cocaina</td>
-                                        <td>Producida por pablito</td>
-                                        <td>10000</td>
-                                        <td>10000</td>
-                                        <td> <button class="btn btn-primary btn-xl" onclick="showModalEditar()"><i
-                                                    class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger btn-xl" onclick="showModalEliminar()"><i
-                                                    class="fa fa-trash-o "></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cocaina</td>
-                                        <td>Producida por pablito</td>
-                                        <td>10000</td>
-                                        <td>10000</td>
-                                        <td> <button class="btn btn-primary btn-xl" onclick="showModalEditar()"><i
-                                                    class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger btn-xl" onclick="showModalEliminar()"><i
-                                                    class="fa fa-trash-o "></i></button></td>
+                                        <td>Juan Diego Rozo</td>
+                                        <td>5844444</td>
+                                        <td>Alkosto</td>
+                                        <td>alkostocucuta@gmail.com</td>
+                                        <td><button class="btn btn-primary " onclick="showModalEditar()"><i
+                                                    class="fa fa-pencil"></i></button> <button class="btn btn-info"
+                                                onclick="showModalVender()"><i class=" fa fa-check"></i></button>
+                                            <button class="btn btn-warning" onclick="showModalAsignar()"><i
+                                                    class="fa fa-dollar"></i></button> <button class="btn btn-danger"
+                                                onclick="showModalEliminar()"><i class="fa fa-trash-o"></i></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
@@ -175,7 +165,7 @@
                                         <th>Nombre</th>
                                         <th>Telefono</th>
                                         <th>Nombre de Empresa</th>
-                                        <th>Email</th>
+                                        <th style="width: 100px">Email</th>
                                         <th>Operaciones</th>
                                     </tr>
                                 </tfoot>
@@ -187,6 +177,31 @@
             </section>
             <! --/wrapper -->
         </section><!-- /MAIN CONTENT -->
+
+        <!-- MODAL EDITAR PROVEEDOR-->
+        <div id="ModalLogo" style="display: none" class="modal">
+
+            <div id="ContentEditarProveedor" class="contenido-modal">
+                <button type="button" class="close" onclick="CloseModalLogo()" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3>UFPS - ANALISIS Y DISEÑO</h3>
+                <fieldset>
+                    <img src="https://www.universidadesvirtuales.com.co/logos/original/logo-universidad-francisco-de-paula-santander.png"
+                        alt="">
+                    <div class="row">
+                        <div class="col-xs-5 col-md-6" style="margin-left: 52%;">
+                            <button type="button" class="btn btn-danger" onclick="CloseModalLogo()">
+                                <i class="glyphicon glyphicon-ban-circle"></i> Cancelar </button>
+                            <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i>
+                                Actualizar</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <!-- /MODAL EDITAR PROVEEDOR-->
 
 
         <!-- MODAL EDITAR PROVEEDOR-->
@@ -270,28 +285,35 @@
                     <form>
                         <div class="form-group col-md-12">
                             <label for="inputEmail4">Nombre</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="Nombres del Cliente">
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombres del Cliente">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputPassword4">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" placeholder="Apellidos del Cliente">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputPassword4">Cedula</label>
+                            <input type="number" class="form-control" id="cedula" placeholder="Apellidos del Cliente">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputPassword4">Telefono</label>
-                            <input type="text" class="form-control" id="inputPassword4"
-                                placeholder="Apellidos del Cliente">
+                            <input type="number" class="form-control" id="telefono" placeholder="Apellidos del Cliente">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputEmail4">Nombre Empresa</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="Cedula del Cliente">
+                            <input type="text" class="form-control" id="nombreEmpresa" placeholder="Empresa">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputPassword4">Email</label>
-                            <input type="email" class="form-control" id="inputPassword4"
-                                placeholder="ejemplo@gmail.com">
+                            <input type="email" class="form-control" id="email" placeholder="ejemplo@gmail.com">
                         </div>
 
                         <div class="row">
                             <div class="col-xs-5 col-md-6" style="margin-left: 52%;">
                                 <button type="button" class="btn btn-danger" onclick="CloseModalAgregar()">
                                     <i class="glyphicon glyphicon-ban-circle"></i> Cancelar </button>
-                                <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i>
+                                <button type="button" class="btn btn-success" onclick="registrarProveedor()"><i
+                                        class="fa fa-shopping-cart"></i>
                                     Guardar</button>
                             </div>
                         </div>
@@ -300,6 +322,32 @@
             </div>
         </div>
         <!-- /MODAL AGREGAR PROVEEDOR-->
+
+        <!-- MODAL ACEPTAR REGISTRO -->
+        <div id="ModalAceptar" style="display: none" class="modal">
+
+            <div id="ContentEliminarCliente" class="contenido-modal">
+                <button type="button" class="close" onclick="CloseModalAceptar()" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!-- <div class="alert alert-warning" role="alert"> -->
+                <h3 style="text-align: center">Se ha registrado con exito !!</h3>
+                <br><br>
+                <!-- </div>  -->
+                <fieldset>
+                    <div class="row">
+                        <div class="col-xs-5 col-md-6" style="margin-left: 68%;">
+                            <button type="button" class="btn btn-success" onclick="location.reload()"><i
+                                    class="fa fa-check"></i>
+                                Aceptar</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <!-- /MODAL ACEPTAR REGISTRO-->
+
         <!--main content end-->
         <!--footer start-->
         <footer class="site-footer">
@@ -325,11 +373,69 @@
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
-
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
+
+    <!-- Script Cargar Proveedores -->
+    <script>
+        const url = 'http://40.122.29.207:8080/proveedor/todos';
+
+        fetch(url)
+            .then(
+                response => {
+                    if (!response.ok) {
+                        window.location.href = "https://www.google.com.co/";
+                    }
+                    return response.json();
+                }
+            )
+            .then(data => {
+                a = data.respuesta.data;
+                for (i = 0; i < a.length; i++) {
+                    $("#Tbody").append('<tr>' +
+                        '<td id="id" style="display:none" value="' + a[i].id + '"> </td>' +
+                        '<td>' + a[i].nombre + '</td>' +
+                        '<td>' + a[i].telefono + '</td>' +
+                        '<td>' + a[i].nombreEmpresa + '</td>' +
+                        '<td>' + a[i].email + '</td>' +
+                        '<td><button class="btn btn-primary " onclick="showModalEditar()"><i class="fa fa-pencil"></i></button> <button class="btn btn-info" onclick="showModalVender()"><i class=" fa fa-check"></i></button> <button class="btn btn-warning" onclick="showModalAsignar()"><i class="fa fa-dollar"></i></button> <button class="btn btn-danger" onclick="showModalEliminar()"><i class="fa fa-trash-o"></i></button></td>' +
+                        '</tr>');
+                }
+                console.log(data)
+            })
+    </script>
+
+    <!-- Script Registrar Preoveedor -->
+    <script>
+        function registrarProveedor() {
+            showModalAceptar()
+            var data = {
+                nombre: $("#nombre").val(),
+                apellido: $("#apellido").val(),
+                cedula: $("#cedula").val(),
+                telefono: $("#telefono").val(),
+                nombreEmpresa: $("#nombreEmpresa").val(),
+                email: $("#email").val()
+            }
+
+            fetch('http://40.122.29.207:8080/proveedor/nuevo', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                if (!response.ok) {
+                    window.location.href = "https://www.google.com.co/";
+                }
+                return response.json();
+            }).then(data => {
+                console.log(data)
+            })
+        }
+    </script>
 
     <script>
         function showModalEditar() {
@@ -356,6 +462,17 @@
             document.getElementById('ModalAgregar').style.display = 'none';
         }
 
+        function showModalAceptar() {
+            document.getElementById('ModalAceptar').style.display = 'block';
+            CloseModalAgregar()
+            // location.reload();
+            $('#example2').DataTable();
+        }
+
+        function CloseModalAceptar() {
+            document.getElementById('ModalAceptar').style.display = 'none';
+            CloseModalAgregar()
+        }
 
         $(function () {
             $('select.styled').customSelect();

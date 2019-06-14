@@ -40,12 +40,12 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>TU TIENDA WEB</b></a>
+            <a href="dashboard.html" class="logo"><b>TU TIENDA WEB</b></a>
             <!--logo end-->
 
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="index.html">Logout</a></li>
                 </ul>
             </div>
         </header>
@@ -65,14 +65,14 @@
                     <h5 class="centered">Tendero</h5>
 
                     <li class="mt">
-                        <a href="index.html">
+                        <a href="dashboard.html">
                             <i class="fa fa-dashboard"></i>
                             <span>Ofertas</span>
                         </a>
                     </li>
 
                     <li class="sub-menu">
-                        <a  href="clientes.html">
+                        <a href="clientes.html">
                             <i class="fa fa-tasks"></i>
                             <span>Clientes</span>
                         </a>
@@ -141,7 +141,7 @@
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
-                                        <th>Descripcion</th>
+                                        <th>Descripción</th>
                                         <th>Precio Compra</th>
                                         <th>Precio Venta</th>
                                         <th>Unidades Disponibles</th>
@@ -149,30 +149,21 @@
                                         <th>Operaciones</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="Tbody">
                                     <tr>
-                                        <td>Cocaina</td>
-                                        <td>Producida por pablito</td>
+                                        <td>carne</td>
+                                        <td>de res</td>
                                         <td>10000</td>
                                         <td>13000</td>
                                         <td>3</td>
                                         <td>23/03/1999</td>
-                                        <td> <button class="btn btn-primary btn-xl" onclick="showModalEditar()"><i
-                                                    class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger btn-xl" onclick="showModalEliminar()"><i
-                                                    class="fa fa-trash-o "></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cocaina</td>
-                                        <td>Producida por pablito</td>
-                                        <td>10000</td>
-                                        <td>13000</td>
-                                        <td>3</td>
-                                        <td>23/03/1999</td>
-                                        <td> <button class="btn btn-primary btn-xl" onclick="showModalEditar()"><i
-                                                    class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger btn-xl" onclick="showModalEliminar()"><i
-                                                    class="fa fa-trash-o "></i></button></td>
+                                        <td><button class="btn btn-primary " onclick="showModalEditar()"><i
+                                                    class="fa fa-pencil"></i></button> <button class="btn btn-info"
+                                                onclick="showModalVender()"><i class=" fa fa-check"></i></button>
+                                            <button class="btn btn-warning" onclick="showModalAsignar()"><i
+                                                    class="fa fa-dollar"></i></button> <button class="btn btn-danger"
+                                                onclick="showModalEliminar()"><i class="fa fa-trash-o"></i></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
@@ -284,37 +275,38 @@
                     <form>
                         <div class="form-group col-md-12">
                             <label for="inputEmail4">Nombres</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="Producto">
+                            <input type="text" class="form-control" id="nombre" placeholder="Producto">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputPassword4">Descripción</label>
-                            <input type="text" class="form-control" id="inputPassword4"
+                            <input type="text" class="form-control" id="descripcion"
                                 placeholder="Decripción del Producto">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputEmail4">Precio Compra</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="Precio de Compra">
+                            <input type="number" class="form-control" id="precioCompra" placeholder="Precio de Compra">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputPassword4">Precio Venta</label>
-                            <input type="email" class="form-control" id="inputPassword4" placeholder="Precio de Venta">
+                            <input type="number" class="form-control" id="precioVenta" placeholder="Precio de Venta">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputPassword4">Unidades Disponibles</label>
-                            <input type="password" class="form-control" id="inputPassword4"
+                            <input type="number" class="form-control" id="uDisponibles"
                                 placeholder="Unidades disponibles">
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="inputPassword4">Fehca de Vencimiento</label>
-                            <input type="text" class="form-control" id="inputPassword4" placeholder="23/03/2018">
+                            <label for="inputPassword4">Fecha de Vencimiento</label>
+                            <input type="date" class="form-control" id="fechaVencimiento" placeholder="23/03/2018">
                         </div>
 
                         <div class="row">
                             <div class="col-xs-5 col-md-6" style="margin-left: 52%;">
                                 <button type="button" class="btn btn-danger" onclick="CloseModalAgregar()">
                                     <i class="glyphicon glyphicon-ban-circle"></i> Cancelar </button>
-                                <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i>
-                                    Actualizar</button>
+                                <button type="button" class="btn btn-success" onclick="registrarProductos()"><i
+                                        class="fa fa-shopping-cart"></i>
+                                    Guardar</button>
                             </div>
                         </div>
                     </form>
@@ -322,6 +314,31 @@
             </div>
         </div>
         <!-- /MODAL AGREGAR PRODUCTO-->
+
+        <!-- MODAL ACEPTAR REGISTRO -->
+        <div id="ModalAceptar" style="display: none" class="modal">
+
+            <div id="ContentEliminarCliente" class="contenido-modal">
+                <button type="button" class="close" onclick="CloseModalAceptar()" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!-- <div class="alert alert-warning" role="alert"> -->
+                <h3 style="text-align: center">Se ha registrado con exito !!</h3>
+                <br><br>
+                <!-- </div>  -->
+                <fieldset>
+                    <div class="row">
+                        <div class="col-xs-5 col-md-6" style="margin-left: 68%;">
+                            <button type="button" class="btn btn-success" onclick="location.reload()"><i
+                                    class="fa fa-check"></i>
+                                Aceptar</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <!-- /MODAL ACEPTAR REGISTRO-->
 
 
         <!--main content end-->
@@ -354,6 +371,67 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
+    <!-- Script Cargar Productos -->
+    <script>
+        const url = 'http://40.122.29.207:8080/producto/todos';
+
+        fetch(url)
+            .then(
+                response => {
+                    if (!response.ok) {
+                        window.location.href = "https://www.google.com.co/";
+                    }
+                    return response.json();
+                }
+            )
+            .then(data => {
+                a = data.respuesta.data;
+                for (i = 0; i < a.length; i++) {
+                    $("#Tbody").append('<tr>' +
+                        '<td id="id" style="display:none" value="' + a[i].id + '"> </td>' +
+                        '<td>' + a[i].nombre + '</td>' +
+                        '<td>' + a[i].descripcion + '</td>' +
+                        '<td>' + a[i].precioCompra + '</td>' +
+                        '<td>' + a[i].precioVenta + '</td>' +
+                        '<td>' + a[i].unidadesDisponibles + '</td>' +
+                        '<td>' + a[i].fechaRegistro + '</td>' +
+                        '<td><button class="btn btn-primary " onclick="showModalEditar()"><i class="fa fa-pencil"></i></button> <button class="btn btn-info" onclick="showModalVender()"><i class=" fa fa-check"></i></button> <button class="btn btn-warning" onclick="showModalAsignar()"><i class="fa fa-dollar"></i></button> <button class="btn btn-danger" onclick="showModalEliminar()"><i class="fa fa-trash-o"></i></button>' +
+                        '</tr>');
+                }
+                console.log(data)
+            })
+    </script>
+    <!-- Script Registrar Productos -->
+    <script>
+        function registrarProductos() {
+            showModalAceptar()
+            var data = {
+                nombre: $("#nombre").val(),
+                descripcion: $("#descripcion").val(),
+                precioCompra: $("#precioCompra").val(),
+                precioVenta: $("#precioVenta").val(),
+                fechaVencimiento: $("#precioVenta").val(),
+                unidadesDisponibles: $("#uDisponibles").val()
+            }
+
+            fetch('http://40.122.29.207:8080/producto/nuevo', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                if (!response.ok) {
+                    window.location.href = "https://www.google.com.co/";
+                }
+                return response.json();
+            }).then(data => {
+                console.log(data)
+            })
+        }
+    </script>
+
+
 
     <script>
         function showModalEditar() {
@@ -378,6 +456,18 @@
 
         function CloseModalAgregar() {
             document.getElementById('ModalAgregar').style.display = 'none';
+        }
+
+        function showModalAceptar() {
+            document.getElementById('ModalAceptar').style.display = 'block';
+            CloseModalAgregar()
+            // location.reload();
+            $('#example2').DataTable();
+        }
+
+        function CloseModalAceptar() {
+            document.getElementById('ModalAceptar').style.display = 'none';
+            CloseModalAgregar()
         }
 
         $(function () {
